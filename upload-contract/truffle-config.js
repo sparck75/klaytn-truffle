@@ -26,11 +26,13 @@ const path = require("path");
 const Caver = require('caver-js')
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
-const accessKeyId = "ACCESS_KEY";
-const secretAccessKey = "SECRET_KEY";
+// https://console.klaytnapi.com/ko/security/credential
+// kas console에서 AccessKey 생성하여 작성
+const accessKeyId = "";
+const secretAccessKey = "";
 
 const HDWalletProvider = require("truffle-hdwallet-provider-klaytn");
-const privateKey = "0x123";
+const privateKey = ""; // Kaikas 지갑 키 내보내기한 private key 입력
 const cypressPrivateKey = "0x456";
 
 module.exports = {
@@ -99,7 +101,7 @@ module.exports = {
       gasPrice:'25000000000'
     },
     baobab: {
-      provider: () => { return new HDWalletProvider(privateKey, "http://your.baobab.en:8551") },
+      provider: () => { return new HDWalletProvider(privateKey, "https://api.baobab.klaytn.net:8651") },
       network_id: '1001', //Klaytn baobab testnet's network id
       gas: '8500000',
       gasPrice: null
